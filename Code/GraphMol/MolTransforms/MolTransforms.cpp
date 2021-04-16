@@ -574,9 +574,9 @@ void setDihedralRad(Conformer &conf, unsigned int iAtomId, unsigned int jAtomId,
     throw ValueErrorException("atoms j and k must be bonded");
   }
 
-  #if (queryIsBondInRing(bondJK)) {
-  #  throw ValueErrorException("bond (j,k) must not belong to a ring");
-  #}
+  // if (queryIsBondInRing(bondJK)) {
+  //   throw ValueErrorException("bond (j,k) must not belong to a ring");
+  // }
   RDGeom::Point3D rIJ = pos[jAtomId] - pos[iAtomId];
   double rIJSqLength = rIJ.lengthSq();
   if (rIJSqLength <= 1.e-16) {
